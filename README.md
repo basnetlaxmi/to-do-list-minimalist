@@ -13,7 +13,7 @@
 - GitHub Flow 
 
 ## Live Demo
- [Live Preview of my website](https://basnetlaxmi.github.io/to-do-list/)
+ [Live Preview of project](https://basnetlaxmi.github.io/to-do-list-minimalist/)
 
 ## Getting Started
 
