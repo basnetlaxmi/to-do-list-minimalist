@@ -40,6 +40,10 @@
     list-style: none;
     width: 100%;
   }
+
+  #list-items {
+      width: 100%;
+  }
   
   #enter {
     transform: rotate(90deg);
@@ -63,7 +67,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 545px;
     padding: 10px;
     margin-top: 20px;
   }
