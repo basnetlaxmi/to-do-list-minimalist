@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  box-shadow: 5px 10px 8px #888;
+  margin: 20px auto;
+  background: white;
+  width: auto;
+  max-width: 40%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.bordered-bottom {
+  border-bottom: 1px solid #eae8ea;
+  box-sizing: border-box;
+}
+
+.container .add-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .add-items .list {
+  align-items: center;
+  list-style: none;
+  width: 100%;
+}
+
+#list-items {
+  width: 100%;
+}
+
+#enter {
+  transform: rotate(90deg);
+}
+
+.container .create-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.container .add-items .create-list input {
+  border: none;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.container .add-items .list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.container .add-items a {
+  width: 100%;
+  cursor: pointer;
+  background: #eeecee;
+  border: 1px solid #8d8c8d;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 0;
+  color: #8d8c8d;
+}
+
+.color {
+  color: #bcb2b2;
+}
