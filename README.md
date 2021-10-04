@@ -6,9 +6,6 @@
 
 ![screenshot](./images/screenshot.png)
 
-
-
-
 ## Built With
 
 - HTML, CSS, js
