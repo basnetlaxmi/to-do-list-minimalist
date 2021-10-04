@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
@@ -19,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/basnetlaxmi/to-do-list-minimalist/issues"
   },
-  "homepage": "https://github.com/basnetlaxmi/to-do-list-minimalist#readme",
+  "homepage": "https://github.com/basnetlaxmi/to-do-list-minimalist",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.3.0",
