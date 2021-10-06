@@ -1,35 +1,24 @@
 import '../style.css';
 
-const tasks = [
-  {
-    index: 1,
-    description: 'Play Music',
-    completed: false,
-  },
-  {
-    index: 2,
-    description: 'Edit Video',
-    completed: false,
-  },
-  {
-    index: 3,
-    description: 'Play Game',
-    completed: false,
-  },
-];
+const tasks = [];
 
 function task(t) {
   const completeClass = t.completed ? 'strike' : '';
   const completeChecked = t.completed ? 'checked' : '';
   return `<ul class="list">
       <li class="bordered-bottom">
-      <div class="details"> 
-      <input type="checkbox" class="checkbox" name="option" id="${t.index}" ${completeChecked} >
-      <label for="option1" class="${completeClass}">${t.description}</label>
-      </div>
-      <div class="icon">
-      <i class="fas fa-ellipsis-v color"></i>
-      </div>
+        <div class="details"> 
+            <input type="checkbox" class="checkbox" name="option" id="${t.index}" ${completeChecked}/>
+            <input type="text" class=" taskName ${completeClass}"  data-index="${t.index}" value="${t.description}"/>
+        </div>
+        <div class="icons">
+          <div class="dots" data-index="${t.index}">
+            <i class="fas fa-ellipsis-v color"></i>
+          </div>
+          <div class="delete" data-index="${t.index}">
+            <i class="far fa-trash-alt color"></i>
+          </div>
+        </div>
      </li>
      </ul>`;
 }
