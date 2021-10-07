@@ -52,7 +52,7 @@ function displayTasks(taskArray = getTask) {
   list.innerHTML = sortTasks.map((t) => task(t)).join('');
   handleCheck();
   // eslint-disable-next-line no-use-before-define
-  // editTask();
+  editTask();
   // show();
 }
 const updateIndex = (array) => array.map((el, i) => {
@@ -89,5 +89,29 @@ title.addEventListener('keyup', (e) => {
 });
 
 enter.addEventListener('click', handleAddTaskOnForm);
+
+function updateTaskName(taskInd, newName) {
+  let allTasks = getTask || [];
+  const thisTask = allTasks.find((t) => t.index === taskInd);
+  thisTask.description = newName;
+  allTasks = allTasks.filter((t) => t.index !== taskInd);
+  allTasks.push(thisTask);
+  localStorage.setItem('taskList', JSON.stringify(allTasks.sort((a, b) => a.index - b.index)));
+}
+
+function editTask() {
+  const allTaskNames = document.querySelectorAll('.taskName');
+  allTaskNames.forEach((tn) => {
+    const taskInd = Number(tn.getAttribute('data-index'));
+    tn.addEventListener('keydown', (e) => {
+      const { key } = e;
+      if (key === 'Enter' || key === 'Escape') {
+        const newName = tn.value;
+        updateTaskName(taskInd, newName);
+        displayTasks();
+      }
+    });
+  });
+}
 
 export { tasks, task, displayTasks };
