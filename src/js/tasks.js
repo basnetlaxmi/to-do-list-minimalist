@@ -139,5 +139,14 @@ function show() {
   });
 }
 
+const clearCompleted = document.querySelector('.button');
+clearCompleted.addEventListener('click', () => {
+  if (getTask.length > 0) {
+    getTask = getTask.filter((t) => !t.completed);
+    getTask = updateIndex(getTask);
+    localStorage.setItem('taskList', JSON.stringify(getTask));
+    window.location.reload();
+  }
+});
 
 export { tasks, task, displayTasks };
