@@ -46,6 +46,36 @@ function handleCheck() {
     displayTasks();
   }));
 }
+
+const updateIndex = (array) => array.map((el, i) => {
+  const newEl = el;
+  newEl.index = i + 1;
+  return newEl;
+});
+function deleteTask(index) {
+  let allTasks = getTask || [];
+  allTasks = allTasks.filter((t) => t.index !== index);
+  allTasks = updateIndex(allTasks);
+  localStorage.setItem('taskList', JSON.stringify(allTasks));
+  window.location.reload();
+}
+
+function show() {
+  const del = document.querySelectorAll('.delete');
+  const dots = document.querySelectorAll('.dots');
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      del[i].style.display = 'block';
+      dot.style.display = 'none';
+      del[i].addEventListener('click', () => {
+        const index = Number(del[i].getAttribute('data-index'));
+        deleteTask(index);
+      });
+    });
+  });
+}
+
 function displayTasks(taskArray = getTask) {
   const list = document.querySelector('#list-items');
   const sortTasks = taskArray.sort((a, b) => a.index - b.index);
@@ -53,14 +83,8 @@ function displayTasks(taskArray = getTask) {
   handleCheck();
   // eslint-disable-next-line no-use-before-define
   editTask();
-  // eslint-disable-next-line no-use-before-define
   show();
 }
-const updateIndex = (array) => array.map((el, i) => {
-  const newEl = el;
-  newEl.index = i + 1;
-  return newEl;
-});
 
 function addItem(taskName) {
   let allTasks = getTask || tasks;
@@ -111,30 +135,6 @@ function editTask() {
         updateTaskName(taskInd, newName);
         displayTasks();
       }
-    });
-  });
-}
-
-function deleteTask(index) {
-  let allTasks = getTask || [];
-  allTasks = allTasks.filter((t) => t.index !== index);
-  allTasks = updateIndex(allTasks);
-  localStorage.setItem('taskList', JSON.stringify(allTasks));
-  window.location.reload();
-}
-
-function show() {
-  const del = document.querySelectorAll('.delete');
-  const dots = document.querySelectorAll('.dots');
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      del[i].style.display = 'block';
-      dot.style.display = 'none';
-      del[i].addEventListener('click', () => {
-        const index = Number(del[i].getAttribute('data-index'));
-        deleteTask(index);
-      });
     });
   });
 }
