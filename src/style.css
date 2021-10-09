@@ -85,3 +85,15 @@
 .color {
   color: #bcb2b2;
 }
+
+.strike {
+  text-decoration: line-through;
+}
+
+.delete {
+  display: none;
+}
+
+.taskName {
+  border: none;
+}
